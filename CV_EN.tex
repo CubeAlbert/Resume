@@ -1,0 +1,485 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages:
+\usepackage[
+ignoreheadfoot, % set margins without considering header and footer
+top=2 cm, % seperation between body and page edge from the top
+bottom=2 cm, % seperation between body and page edge from the bottom
+left=2 cm, % seperation between body and page edge from the left
+right=2 cm, % seperation between body and page edge from the right
+footskip=1.0 cm, % seperation between body and footer
+% showframe % for debugging 
+]{geometry} % for adjusting page geometry
+\usepackage{titlesec} % for customizing section titles
+\usepackage{tabularx} % for making tables with fixed width columns
+\usepackage{array} % tabularx requires this
+\usepackage[dvipsnames]{xcolor} % for coloring text
+\definecolor{primaryColor}{RGB}{0, 79, 144} % define primary color
+\usepackage{enumitem} % for customizing lists
+\usepackage{fontawesome5} % for using icons
+\usepackage{amsmath} % for math
+\usepackage[
+pdftitle={Yang Shengxun's CV},
+pdfauthor={Yang Shengxun},
+pdfcreator={Yang Shengxun},
+colorlinks=true,
+urlcolor=primaryColor
+]{hyperref} % for links, metadata and bookmarks
+\usepackage[pscoord]{eso-pic} % for floating text on the page
+\usepackage{calc} % for calculating lengths
+\usepackage{bookmark} % for bookmarks
+\usepackage{lastpage} % for getting the total number of pages
+\usepackage{changepage} % for one column entries (adjustwidth environment)
+\usepackage{paracol} % for two and three column entries
+\usepackage{ifthen} % for conditional statements
+\usepackage{needspace} % for avoiding page brake right after the section title
+\usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+\usepackage{afterpage}
+
+
+% Ensure that generate pdf is machine readable/ATS parsable:
+\ifPDFTeX
+\pdfgentounicode=1
+% \usepackage[T1]{fontenc} % this breaks sb2nov
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\fi
+
+
+
+% Some settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+\pagestyle{empty} % no header or footer
+\setcounter{secnumdepth}{0} % no section numbering
+\setlength{\parindent}{0pt} % no indentation
+\setlength{\topskip}{0pt} % no top skip
+\setlength{\columnsep}{0cm} % set column seperation
+\makeatletter
+\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+	\color{gray}\textit{\small Yang Shengxun - Page \thepage{} of \pageref*{LastPage}}
+}{}{} % replace number by desired string
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{
+	% left space:
+	-1pt
+}{
+	% top space:
+	0.3 cm
+}{
+	% bottom space:
+	0.2 cm
+} % section title spacing
+
+\renewcommand\labelitemi{$\circ$} % custom bullet points
+\newenvironment{highlights}{
+	\begin{itemize}[
+		topsep=0.10 cm,
+		parsep=0.10 cm,
+		partopsep=0pt,
+		itemsep=0pt,
+		leftmargin=0.4 cm + 10pt
+		]
+	}{
+	\end{itemize}
+} % new environment for highlights
+
+\newenvironment{highlightsforbulletentries}{
+	\begin{itemize}[
+		topsep=0.10 cm,
+		parsep=0.10 cm,
+		partopsep=0pt,
+		itemsep=0pt,
+		leftmargin=10pt
+		]
+	}{
+	\end{itemize}
+} % new environment for highlights for bullet entries
+
+
+\newenvironment{onecolentry}{
+	\begin{adjustwidth}{
+			0.2 cm + 0.00001 cm
+		}{
+			0.2 cm + 0.00001 cm
+		}
+	}{
+	\end{adjustwidth}
+} % new environment for one column entries
+
+\newenvironment{twocolentry}[2][]{
+	\onecolentry
+	\def\secondColumn{#2}
+	\setcolumnwidth{\fill, 4.5 cm}
+	\begin{paracol}{2}
+	}{
+		\switchcolumn \raggedleft \secondColumn
+	\end{paracol}
+	\endonecolentry
+} % new environment for two column entries
+
+\newenvironment{header}{
+	\setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+	\par\kern\topsep
+} % new environment for the header
+
+\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+	\AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+		\put(
+		\LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+		\LenToUnit{\paperheight-1.0 cm}
+		){\vtop{{\null}\makebox[0pt][c]{
+					\small\color{gray}\textit{Last updated in June 2025 }\hspace{\widthof{Last updated in June 2025}}
+		}}}%
+	}%
+}%
+
+% save the original href command in a new command:
+\let\hrefWithoutArrow\href
+
+% new command for external links:
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+
+\begin{document}
+	\newcommand{\AND}{\unskip
+		\cleaders\copy\ANDbox\hskip\wd\ANDbox
+		\ignorespaces
+	}
+	\newsavebox\ANDbox
+	\sbox\ANDbox{}
+	
+	\placelastupdatedtext
+	\begin{header}
+		\textbf{\fontsize{24 pt}{24 pt}\selectfont Yang Shengxun}
+		
+		\vspace{0.3 cm}
+		
+		\normalsize
+		
+		
+		\kern 0.25 cm%
+		\mbox{\hrefWithoutArrow{mailto:albertyang0607@gmail.com}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}albertyang0607@gmail.com}}%
+		\kern 0.25 cm%
+		\AND%
+		\kern 0.25 cm%
+		\mbox{\hrefWithoutArrow{tel:+86-18795858970}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm}18795858970}}%
+		\kern 0.25 cm%
+		\AND%
+		\kern 0.25 cm%
+		\AND%
+		\kern 0.25 cm%
+		\mbox{\hrefWithoutArrow{https://github.com/CubeAlbert}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}CubeAlbert}}%
+		\AND%
+		\kern 0.25 cm%
+		\AND%
+		\kern 0.25 cm%
+		\mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Shanghai}%
+	\end{header}
+	
+	\vspace{0.3 cm - 0.3 cm}
+	
+	\section{Summary}
+	\vspace{0.10 cm}
+	\textbf{\emph{With seven years of experience in software development, skilled in Java and C\# programming and possess extensive knowledge in the financial domain.}}
+	
+	
+	\section{Education}
+	\vspace{0.1 cm}
+	
+	\begin{twocolentry}{
+			\textit{Sept 2014 – June 2018}}
+		\textbf{Nanjing University}
+		
+		\text Bachelor's Degree in Information Management and Information System
+	\end{twocolentry}
+	
+
+	
+	\section{Skills}
+	\vspace{0.1 cm}
+		
+		\begin{onecolentry}
+			\textbf{Languages:} \emph{\textbf{Java}}, \emph{\textbf{C\#}}, \emph{\textbf{PowerShell}}, \emph{\textbf{SQL}}, C++, Bash, Groovy
+		\end{onecolentry}
+		
+		\vspace{0.1 cm}
+		
+		\begin{onecolentry}
+			\textbf{Databases:} \emph{\textbf{Oracle}}, \emph{\textbf{MongoDB}}, Sybase,  SQLServer
+		\end{onecolentry}
+		
+		\vspace{0.1 cm}
+		
+		\begin{onecolentry}
+			\textbf{Frameworks:} Spring Boot, Spring Cloud, .Net Framework
+		\end{onecolentry}
+		
+		\vspace{0.1 cm}
+		
+		\begin{onecolentry}
+			\textbf{DevTools:} Git, SVN, IDEA, Visual Studio, Maven, Gradle, Jenkins, Docker, Copilot
+		\end{onecolentry}
+	
+	
+	
+	
+	\section{Experience}
+	\vspace{0.1 cm}
+	
+	\begin{twocolentry}{
+		\textit{Shanghai} \\
+		\textit{Feb 2020 – June 2025}}
+		\textbf{.Net\&Java Software Engineer}
+		\\
+		\text{Citigroup Services and Technology(China) Ltd.}
+	\end{twocolentry}
+	
+	\vspace{0.08 cm}
+	\begin{onecolentry}
+		\begin{highlights}
+			\item Reduced time to calculate real-time spot price by 20\% by implementing Lazy Evaluation algorithm
+			\item Developed the trade sync service to automate the booking of specific OTC trades into internal system
+			\item Re-designed reconciliation report tools and introduced parallel processing to enhance the efficiency
+		\end{highlights}
+	\end{onecolentry}
+	
+	
+	\vspace{0.2 cm}
+
+	\vspace{0.2 cm}	
+	
+	\begin{twocolentry}{
+		\textit{Shanghai}\\
+		\textit{Sept 2018 – Jan 2020}}
+		\textbf{Software Engineer}
+		\\
+		\text{HAND Enterprise Solutions Co., Ltd.}
+	\end{twocolentry}
+	
+	\vspace{0.08 cm}
+	\begin{onecolentry}
+		\begin{highlights}
+			\item Designed and developed an API to integrate with the distributor management system
+			\item Automated the extraction and processing of large datasets from legacy systems using SQL and Shell scripts
+		\end{highlights}
+	\end{onecolentry}
+	
+	
+	
+	
+
+	
+	\section{Project}
+	\vspace{0.1 cm}
+	
+	
+	\begin{twocolentry}{
+			\textit{Mar 2024 - Now}}
+			\textbf{Consistent Asset Pricing Platform} 
+			\space\space\space\space\space\space\space\space\space\space\space\space Java Engineer
+		\end{twocolentry}
+		
+		\vspace{0.10 cm}
+		\begin{onecolentry}
+			\textbf{Introduction:} 
+			\begin{highlights}
+				\item A robust system to collect real-time data from various financial markets
+				\item This system processes and standardizes the data and store into centralized database, and can distribute prices to downstream applications through APIs, ensure the integration and accessibility
+				\item It also employs advanced synchronization tech to account for different markets and regulatory requirements, finally it utilizes global feed adaptors and real-time data hubs, ensure uniformity in pricing information
+			\end{highlights}
+ 			\textbf{Responsibility:} 
+			\begin{highlights}
+				\item Deeply understood the current system's business logic and functional modules to maintain it 
+				\item Rewrote the price calculation logic for specific asset types to minimize errors and enhance efficiency
+				\item Refactored the data transfer process to significantly improve transmission efficiency
+				\item Designed and implemented an asset synchronization process for reference data usage
+				\item Built new CI/CD pipelines to automate building, testing, and deployment				
+			\end{highlights}
+			\textbf{Tools:} Spring Boot, MongoDB, \textbf{ANTLR}, Refinitiv EMA, Protobuf, Oracle, Groovy
+		\end{onecolentry}		
+		\vspace{0.4 cm}
+		\newpage
+		\rule{\textwidth}{0.4pt}
+		\vspace{-5pt}
+		\begin{twocolentry}{
+				\textit{Oct 2023 - Feb 2024}}
+				\textbf{NetDeploy Pipeline}
+				\space\space\space\space\space\space\space\space\space\space\space\space DevOps Engineer
+			\end{twocolentry}
+			
+			\vspace{0.10 cm}
+			\begin{onecolentry}
+				\textbf{Introduction:} 
+				\begin{highlights}
+					\item An efficient CI/CD pipeline for .NET devs to automate the build, test, and deployment processes
+					\item It integrates with existing .NET development practices and provides a robust foundation for efficient software development and deployment
+				\end{highlights}
+				\textbf{Responsibility:} 
+				\begin{highlights}
+					\item Recognize challenges in .NET development, testing, and deployment processes
+					\item Examine relevant system documentation to understand current workflows and procedures
+					\item Write scripts to automate identified tasks and address the pain points
+				\end{highlights}
+				\textbf{Tools:} PowerShell, Bitbucket, TeamCity, Udeploy, AutoSys
+			\end{onecolentry}
+			\vspace{0.4 cm}
+			\hrule
+			
+			\vspace{0.4 cm}
+			\begin{twocolentry}{	
+				\textit{Mar 2023 - Sept 2023}}
+				\textbf{Integration Test Framework}
+				\space\space\space\space\space\space\space\space\space\space\space\space DevOps Engineer
+			\end{twocolentry}
+			
+			\vspace{0.10 cm}
+			\begin{onecolentry}
+				\textbf{Introduction:} 
+				\begin{highlights}
+					\item A framework for verifying the interaction and collaboration between different components in trading system
+					\item It ensures that current function is intended and no new bugs or inefficiencies will be introduced by changes, and it also automates repetitive tasks, allowing QA teams to focus on more critical activities while ensuring the system's overall functionality and quality
+				\end{highlights}
+				\textbf{Responsibility:} 
+				\begin{highlights}
+					\item Create the basic project structure, including necessary directories and initial configurations
+					\item Write sample test cases for other developers to refer to 
+					\item Integrate project into the existing CI/CD pipeline and set up triggers for automated testing on code pushes
+					\item Deploy the service to ECS for developers to test specific cases
+				\end{highlights}
+				\textbf{Tools:} Spring Boot, Spring Cloud, TestNG, Cucumber, Jenkins, Docker, OpenShift, SonarQube
+			\end{onecolentry}
+			\vspace{0.4 cm}
+			\hrule
+			\vspace{0.4 cm}
+			\begin{twocolentry}{	
+				\textit{Dec 2021 - Feb 2023}}
+				\textbf{OTC Trade Booking System}
+				\space\space\space\space\space\space\space\space\space\space\space\space Java Engineer
+			\end{twocolentry}
+			
+			\vspace{0.10 cm}
+			\begin{onecolentry}
+				\textbf{Introduction:} 
+				\begin{highlights}
+					\item A service for capturing OTC trades from third-party platform and booking them into internal system
+					\item This service receives XML messages from an external system containing details of OTC trades, and convert them into private trade models, then checks the internal trade status to determine the trade lifecycle
+					\\Later it sends the model to another system for booking the trade into database. After booking, it sends the booking status back to the external system, confirming whether the trade was successfully processed
+				\end{highlights}
+				\textbf{Responsibility:} 
+				\begin{highlights}
+					\item Understand specific OTC products and map external fields to internal requirements
+					\item Organize project components for efficiency and clarity
+					\item Write code to extract data and implement validation checks
+					\item Set up APIs for real-time data exchange between this service and other internal platforms
+					\item Build CI/CD Pipeline for streamline development and deployment processes
+					\item Conduct unit tests, integration tests and UAT tests to ensure all requirements are met
+					\item Regularly update stakeholders on project progress and challenges
+				\end{highlights}
+				\textbf{Tools:} Spring Boot, Spring Cloud, Solace, Protobuf, Jenkins, Docker, OpenShift
+			\end{onecolentry}
+			\vspace{0.4 cm}
+			\hrule
+			\vspace{0.4 cm}
+			\begin{twocolentry}{	
+				\textit{June 2020 - Nov 2021}}
+				\textbf{OTC Trade Uploading System}
+				\space\space\space\space\space\space\space\space\space\space\space\space .Net Engineer
+			\end{twocolentry}
+			
+			\vspace{0.10 cm}
+			\begin{onecolentry}
+				\textbf{Introduction:} 
+				\begin{highlights}
+					\item A service for uploading internal OTC trades to third-party platform
+					\item This service monitors a specific message queue. Upon receiving a notification, it retrieves trade details from the database, constructs a serialized message, and sends it to the third-party platform
+				\end{highlights}
+				\textbf{Responsibility:} 
+				\begin{highlights}
+					\item Optimize existing functions to improve performance, and add new functional modules for new requirements
+					\item Perform manual testing when releasing new versions or major changes
+					\item Manage configuration files to ensure that they are correctly applied in different environments
+					\item Add detailed documentation for team members to understand and maintain it
+				\end{highlights}
+				\textbf{Tools:} C\#, TIBCO EMS, Sybase, C++
+			\end{onecolentry}
+			\vspace{0.4 cm}
+			\hrule
+			\vspace{0.4 cm}
+			
+			\begin{twocolentry}{	
+				\textit{Feb 2020 - Oct 2021}}
+				\textbf{Reconciliation Report Platform}
+				\space\space\space\space\space\space\space\space\space\space\space\space .Net Engineer
+			\end{twocolentry}
+			
+			\vspace{0.10 cm}
+			\begin{onecolentry}
+				\textbf{Introduction:} 
+				\begin{highlights}
+					\item A platform serves as a critical tool for ensuring the consistency of trade data from its source to its terminal
+					\item The platform integrates with multiple data sources to receive feeds, and compares feeds to identify any discrepancies or inconsistencies, then users can access a user-friendly portal to review any identified breaks
+				\end{highlights} 
+				\textbf{Responsibility:} 
+				\begin{highlights}
+					\item Gain comprehensive knowledge of OTC instruments, their lifecycle, and representation in data feeds
+					\item Streamline the UAT process to ensure smooth testing and issue resolution
+					\item Maintain the OTC feed generator, and enhance the efficiency and performance
+				\end{highlights}
+				\textbf{Tools:} C\#, PowerShell, Sybase, Java
+			\end{onecolentry}
+			\vspace{0.4 cm}
+			\hrule
+			\vspace{0.4 cm}
+			\begin{twocolentry}{	
+				\textit{June 2018 - Dec 2019}}
+				\textbf{Bright Dairy CRM System}
+				\space\space\space\space\space\space\space\space\space\space\space\space Java Engineer
+			\end{twocolentry}
+			
+			\vspace{0.10 cm}
+			\begin{onecolentry}
+				\textbf{Introduction:} 
+				\begin{highlights}
+					\item A comprehensive CRM system designed for managing distributors, featuring warehouse management, store management, and event management capabilities
+				\end{highlights} 
+				\textbf{Responsibility:} 
+				\begin{highlights}
+					\item Legacy system maintenance: daily monitoring, issue resolution and routine updates
+					\item New system migration: data integrity and testing
+					\item Communication and collaboration with other developers
+				\end{highlights}
+				\textbf{Tools:} eScript, Java, Oracle 
+			\end{onecolentry}
+			\vspace{0.4 cm}
+			\vspace{0.4 cm}
+			
+			\section{Addition}
+			
+			\begin{onecolentry}
+				\textbf{LLM Experience}
+				\begin{highlights}
+					\item Local deployment of Stable Diffusion to enhance AI image generation capabilities
+					\item Local deployment of DeepSeek-R1 to optimize conversational AI functionalities
+				\end{highlights}
+			\end{onecolentry}
+			
+			\vspace{0.2 cm}
+			
+			\begin{onecolentry}
+				\textbf{Certificates} 
+				\begin{highlights}
+					\item CET-6
+					\item Project Management Professional
+				\end{highlights}
+			\end{onecolentry}
+			
+			
+			
+			
+		\end{document}
