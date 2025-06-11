@@ -1,0 +1,353 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[bottom=0.8in,top=0.8in, left=0.8in,right=0.8in]{geometry}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%%%%%%%%%%% pdflatex %%%%%%%%%
+\usepackage[T1]{fontenc}
+\usepackage{newtxmath,newtxtext}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%% xelatex %%%%%%%%%%%%%%
+% \usepackage{fontspec}
+% \setmainfont{Times New Roman}
+% \setmainfont{TeX Gyre Termes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%A Few Useful Packages
+\usepackage{parskip}
+\usepackage{titlesec}	
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{dashrule}
+\usepackage[encapsulated]{CJK}
+\usepackage[UTF8]{ctex}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % 
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor={linkcolour!90}, linkcolor={linkcolour!90}}
+
+% line spacing
+\linespread{1.1}
+
+% section reformatting
+\titleformat{\section}{\color{black} \large}{}{0em}{}[\color{black}]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+
+\newcommand{\sectitle}[1]{
+	\vspace{1.5ex}
+	\section{#1}
+	\vspace{-3ex}
+	\noindent\rule{\textwidth}{0.7pt}
+	\vspace{-4ex}
+	
+}
+
+% new text bold style
+\newsavebox\CBox
+\def\textBF#1{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textcolor{linkcolour}{{#1}}}}
+\parindent=0pt
+
+% dummy text
+\newcommand{\mylipsum}{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit,
+	vestibulum ut, placerat ac, adipiscing vitae, felis.}
+
+%-------------------- Begin document ----------------------
+\begin{document}
+	
+	%-------------------- Title section ----------------------
+	\begin{minipage}{\textwidth}
+		\vspace{7ex}
+		\par{
+			\centering
+			\vspace{-0.9in}
+			% \textcolor{black}{\emph{Curriculum Vitae}}\\
+			\textcolor{linkcolour}{\Large Yang Shengxun}
+			\par}
+	\end{minipage}
+	
+	%-------------------- Header ----------------------
+	\begin{center}
+		Gender: Male $\cdot$\ Age: 29 \,$\cdot$\, Mail: \href{mailto:albertyang0607@gmail.com}{albertyang0607@gmail.com} \,$\cdot$\, Phone: \href{tel:+86-18795858970}{18795858970}\,$\cdot$\, Github: \href{https://github.com/CubeAlbert}{CubeAlbert}
+	\end{center}
+	
+	%%% Short paragraph
+	\sectitle{Summary}
+	\begin{itemize}[itemsep=-5pt]
+		\item{Senior Software Engineer leveraging 7+ years to architect and deliver high-impact FinTech applications.}
+		\item{Progressed to include formal mentorship, guiding junior engineers for the past 2 years.}
+		\item{Skilled in optimizing end-to-end project lifecycles and driving technical innovation (e.g., Integration test frameworks, High-concurrency solutions).}
+		\item {Fluent in aligning business needs with scalable, efficient technical solutions to drive team success.}
+	\end{itemize}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\sectitle{Education}
+	\text{Nanjing University} \hfill {Sept 2014 -- June 2018} \\
+	\textBF{Bachelor’s Degree} in Information Management and Information System 
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\sectitle{Skill}
+	\textBF{Languages:} \emph{Java, C\#, PowerShell, SQL}, C++, Bash, Groovy \\
+	\textBF{Databases:} \emph{Oracle, MongoDB, Sybase}, SQLServer\\
+	\textBF{Frameworks:} Spring Boot, Spring Cloud, .Net Framework\\
+	\textBF{DevTools:} Git, SVN, IDEA, Visual Studio, Maven, Gradle, Jenkins, Docker, Copilot
+		
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\sectitle{Experience}
+	%Change this to "Apps Dev Intmd Programmer Analyst" for HSBC, others can be "Senior Software Engineer"
+	\textBF{Senior Software Engineer} \hfill \emph{Market Data \& Post Trade}\\ Citigroup Services and Technology(China) Ltd.  \hfill Oct 2021 -- Present
+	\vspace{-0.2 cm}
+	\begin{enumerate}[itemsep=-5pt]
+		\item{\textbf{Hands-on writing of core project functionality} and conducting thorough code reviews to maintain quality of deliverables and ensure adherence to best practices.}
+		\item{\textbf{Drove code quality initiatives} via enforced peer reviews, guaranteeing robust deliverables.}
+		\item{\textbf{Implemented the integration test framework }that streamlined end-to-end testing for microservices APIs, improving efficiency and scalability across projects.}
+		different micro services projects to perform end to end testing of the Micro APIs.
+		\item{\textbf{Built scalable DevOps automation} that reduce manual tasks and standardized development environments.}
+		\item{\textbf{Provided L3 production support}, ensuring system stability and addressing critical issues.}
+	\end{enumerate}
+	\vspace{-0.2 cm}
+	%\begin{flushright}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	%\end{flushright}
+	\textBF{Software Engineer}  \hfill \emph{Post Trade}\\ Citigroup Services and Technology(China) Ltd.  \hfill Feb 2020 - Sept 2021
+	\vspace{-0.2 cm}
+	\begin{enumerate}[itemsep=-5pt]
+		\item{\textbf{Maintained the core modules} for a reconciliation report system.}
+		\item{\textbf{Liaised with third-party vendors} automate OTC trade date alignment across systems.}
+		\item{\textbf{Provided basic L3 production support}, ensuring system stability.}		
+	\end{enumerate}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	\textBF{Software Developer} \hfill \emph{Digital Marketing Center}\\ HAND Enterprise Solutions Co., Ltd.  \hfill July 2018 - Jan 2020
+	\vspace{-0.2 cm}
+	\begin{enumerate}[itemsep=-5pt]
+		\item{\textbf{Owned system maintenance and feature development} aligned to user requirements.}	
+		\item{\textbf{Engineered automated data validation} during the system migration.}	
+	\end{enumerate}
+	
+	\pagebreak
+	%-------------------- SECTIONS ----------------------
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\sectitle{Project Experience}
+	
+	\textBF{Consistent Asset Pricing System} \\ Java Engineer (Core Developer) \hfill Mar 2024 - Present
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{Introduction:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {The system specializes in high-frequency data acquisition of global stock prices and other listed assets, calculating portfolio values such as baskets and ADRs. Data is distributed through website queries, API interfaces, and subscription services. Currently, it processes over 300,000 entities per region within 15 seconds, ensuring efficient handling of high volumes. The future goal is to achieve processing of over a million entities in just 5 seconds, enhancing scalability and performance.}
+		\end{itemize}
+		\item{\textbf{Tools: }Spring Boot, MongoDB, ANTLR, Refinitiv EMA, Protobuf, Oracle, Groovy}
+		\item{\textbf{Responsibility: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {Work closely with Project Manager and BAs to analyze requirements, translating them into clear technical specifications and assign tasks to junior engineers.}
+			\item{Hands-on coding of critical tasks, conduct solution and code reviews for junior engineers.}
+			\item{Design and implement CI/CD pipelines to automate build, test, and deployment processes.}
+			
+		\end{enumerate}
+		\item{\textbf{Achievements: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {Engineered a new price calculation logic by implementing Lazy Evaluation algorithm for basket pricing, successfully resolving pricing errors and enhancing computational efficiency by 20\%.}
+			\item {Streamlined the data transfer process, significantly improving transmission efficiency and reducing processing time by 40\%.}
+			\item{Designed and implemented an asset synchronization process for reference data, resulting in improved data accuracy and reduced downtime.}
+			\item{Replaced legacy manual deployment methods with modern CI/CD automation, significantly improving reliability and developer productivity.}
+		\end{enumerate}
+	\end{itemize}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	
+	\textBF{.Net Deployment Pipeline} \\ DevOps Engineer (Technical Owner) \hfill Oct 2023 - Feb 2024
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{Introduction:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {This project is for building a CI/CD pipeline automating build, test, and deployment processes for .NET applications. Integrated with existing development workflows while establishing infrastructure-as-code practices to standardize and accelerate software delivery.}
+		\end{itemize}
+		\item{\textbf{Tools: }PowerShell, Bitbucket, TeamCity, Udeploy, AutoSys}
+		\item{\textbf{Responsibility: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {Recognize challenges in .NET development, testing, and deployment processes.}
+			\item {Examine relevant system documentation to understand current workflows and procedures.}
+			\item {Write scripts to automate identified tasks and address the pain points.}
+		\end{enumerate}
+		\item{\textbf{Achievements: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {Engineered scripted solutions to automate repetitive .NET relevant tasks, transforming error-prone manual processes into reliable workflows.}
+			\item {Collaborated with team members to diagnose bottlenecks in .NET deployments and delivered targeted fixes.}
+			\item {Built the .NET CI/CD practices by replacing manual works with automation frameworks.}
+		\end{enumerate}
+	\end{itemize}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	\pagebreak
+	
+	\textBF{Integration Test Framework} \\ DevOps Engineer (Core Contributor) \hfill Mar 2023 - Feb 2024
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{Introduction:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {The integration test framework is designed to validate the seamless interaction and collaboration between various components within our trading system. Its primary purpose is to ensure that existing functionalities remain intact and free from unintended side effects, particularly when changes are implemented. It effectively eliminates the introduction of new bugs or inefficiencies during the update process.
+			\item This framework plays a crucial role in our QA transformation initiative by streamlining regression testing processes. It allows QA teams to concentrate their efforts on identifying and addressing issues related to new changes, thereby enhancing overall system reliability and performance.}
+		\end{itemize}
+		\item{\textbf{Tools: }Java, Spring Boot, Spring Cloud, TestNG, Cucumber, Jacoco, OpenShift}
+		\item{\textbf{Responsibility: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {Architect the foundational structure of the integration test project, defining directory layouts, configuration templates, and best practices for scalability.}
+			\item {Developed reference test cases for team members.}
+			\item {Automated CI/CD integration by configuring pipeline triggers to execute tests on every code push.}
+			\item {Develop and deploy a service using the framework to OpenShift, enabling developers to validate individual test cases in an isolated environment.}
+		\end{enumerate}
+		\item{\textbf{Achievements: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {Designed a modular code structure featuring reusable common libraries and a sample project.}
+			\item {Developed a microservices project based on this framework, which is deployable on OpenShift platform with manual or scheduled execution capabilities, enhancing testing efficiency.}
+		\end{enumerate}
+	\end{itemize}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	
+	\textBF{Equity Derivatives OTC Trade Booking Service(Greenfield Project)} \\ Java Engineer (Technical Owner) \& Business Analyst \hfill  Dec 2021 - Feb 2023
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{Introduction:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {A mission-critical middleware solution that processes Accumulator OTC trades by receiving XML messages from external platforms, converting them into internal trade models, validating trade lifecycles, booking trades to internal systems, and returning confirmation statuses to the originating platform - ensuring accurate and automated trade processing across systems.}
+		\end{itemize}
+		\item{\textbf{Tools: }Spring Boot, Spring Cloud, Solace, Protobuf, Jenkins, Docker, OpenShift}
+		\item{\textbf{Responsibility: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {Build from scratch.}
+			\item {Understand specific OTC products and its lifecycle to map external fields to internal requirements.}
+			\item {Organize project components for efficiency and clarity.}
+			\item {Write code to extract data and implement validation checks.}
+			\item {Set up APIs for real-time data exchange between this service and other internal platforms.}
+			\item {Build CI/CD Pipeline for streamline development and deployment processes.}
+			\item {Conduct unit tests and UAT tests to ensure all requirements are met.}
+			\item {Regularly update stakeholders on project progress and challenges.}
+		\end{enumerate}
+		\item{\textbf{Achievements: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item{Architected and implemented the OTC trade booking service from scratch.}
+			\item{Mastered Accumulator OTC product lifecycles to accurately map 50+ external fields to internal systems, ensuring data fidelity across platforms.}
+			\item{Engineered data validation that automatically verify trade details (e.g., pricing, counterparties) before downstream processing.}
+			\item{Automated CI/CD pipelines to enable rapid iterations, from code commits to OpenShift deployments.}
+			\item{Delivered biweekly stakeholder updates and resolved critical path challenges.}
+		\end{enumerate}
+	\end{itemize}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	
+	
+	\textBF{Equity Derivatives OTC Trade Uploading Service} \\ .Net Engineer (Primary Developer \& Maintainer) \hfill  June 2020 - Feb 2024
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{Introduction:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {This service handles OTC trade uploads, including complex instruments like options, exotic options, and equity swaps, between internal databases and external confirmation systems.}
+		\end{itemize}
+		\item{\textbf{Tools: }C\#, TIBCO EMS, Sybase, C++, PowerShell}
+		\item{\textbf{Responsibility: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {Optimize existing functions to improve performance, and add new functional modules for new requirements.}
+			\item {Perform manual testing when releasing new versions or major changes.}
+			\item {Manage configuration files to ensure that they are correctly applied in different environments.}
+		\end{enumerate}
+		\item{\textbf{Achievements: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item{Enhanced the service by developing a new module, adding support for Option with new Reference Type.}
+			\item{Created and maintained detailed technical documentation covering system architecture, APIs, and operational procedures - turning previously undocumented service into a well-documented system.}
+		\end{enumerate}
+	\end{itemize}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	
+	\textBF{Reconciliation Report Platform} \\ .Net Engineer (Maintainer) \hfill  Feb 2020 -- Step 2021
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{Introduction:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {The platform integrates with multiple data sources to receive feeds, and compares feeds to identify any discrepancies or inconsistencies, then users can access a user-friendly portal to review any identified breaks and take actions.}
+		\end{itemize}
+		\item{\textbf{Tools: }C\#, PowerShell, Sybase, Java}
+		\item{\textbf{Responsibility: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {Gain comprehensive knowledge of OTC instruments, their lifecycle, and representation in data feeds.}
+			\item {Streamline the UAT process to ensure smooth testing and issue resolution.}
+			\item {Provided L3 production support.}
+		\end{enumerate}
+		\item{\textbf{Achievements: }}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item{Re-designed reconciliation report tools and introduced parallel processing to enhance the efficiency.}
+		\end{itemize}
+	\end{itemize}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	
+	\textBF{Bright Dairy CRM System} \\ Java Developer \hfill  June 2018 - Dec 2019
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{Introduction:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {A comprehensive CRM system designed for managing distributors, featuring warehouse management, store management, and event management capabilities.}
+		\end{itemize}
+		\item{\textbf{Tools: }eScript, Java, Oracle}
+		\item{\textbf{Responsibility: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {Legacy system maintenance: daily monitoring, issue resolution and routine updates.}
+			\item {New system migration: data integrity and testing.}
+			\item {Communication and collaboration with other developers.}
+		\end{enumerate}
+		\item{\textbf{Achievements: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item{Designed and developed an API to integrate with the distributor management system.}
+			\item{Automated the extraction and processing of large datasets from legacy systems using SQL and Shell scripts.}
+		\end{enumerate}
+	\end{itemize}
+
+	
+	
+	\sectitle{Addition}
+	\textBF{LLM Experience} 
+	\begin{itemize}
+		\item{Local deployment of Stable Diffusion to enhance AI image generation capabilities.}
+		\item{Local deployment of DeepSeek-R1 to optimize conversational AI functionalities.}
+		\item{Invoke DeepSeek API to access DeepSeek-V3 for AI conversation.}
+	\end{itemize}
+		\textBF{Certificates} 
+	\begin{itemize}
+		\item{CET-6}
+		\item{Project Management Professional}
+	\end{itemize}
+
+\end{document}
