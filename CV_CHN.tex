@@ -1,0 +1,353 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[bottom=0.8in,top=0.8in, left=0.8in,right=0.8in]{geometry}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%%%%%%%%%%% pdflatex %%%%%%%%%
+\usepackage[T1]{fontenc}
+\usepackage{newtxmath,newtxtext}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%% xelatex %%%%%%%%%%%%%%
+% \usepackage{fontspec}
+% \setmainfont{Times New Roman}
+% \setmainfont{TeX Gyre Termes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%A Few Useful Packages
+\usepackage{parskip}
+\usepackage{titlesec}	
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{dashrule}
+\usepackage[encapsulated]{CJK}
+\usepackage[UTF8]{ctex}
+\usepackage{fancyhdr}
+\usepackage[encapsulated]{CJK}
+\usepackage[UTF8]{ctex}
+
+\pagestyle{fancy}
+\fancyhf{} % 
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor={linkcolour!90}, linkcolor={linkcolour!90}}
+
+% line spacing
+\linespread{1.1}
+
+% section reformatting
+\titleformat{\section}{\color{black} \large}{}{0em}{}[\color{black}]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+
+\newcommand{\sectitle}[1]{
+	\vspace{1.5ex}
+	\section{#1}
+	\vspace{-3ex}
+	\noindent\rule{\textwidth}{0.7pt}
+	\vspace{-4ex}
+	
+}
+
+% new text bold style
+\newsavebox\CBox
+\def\textBF#1{\sbox\CBox{#1}\resizebox{\wd\CBox}{\ht\CBox}{\textcolor{linkcolour}{{#1}}}}
+\parindent=0pt
+
+% dummy text
+\newcommand{\mylipsum}{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit,
+	vestibulum ut, placerat ac, adipiscing vitae, felis.}
+
+%-------------------- Begin document ----------------------
+\begin{document}
+	
+	%-------------------- Title section ----------------------
+	\begin{minipage}{\textwidth}
+		\vspace{7ex}
+		\par{
+			\centering
+			\vspace{-0.9in}
+			% \textcolor{black}{\emph{Curriculum Vitae}}\\
+			\textcolor{linkcolour}{\Large 杨圣勋}
+			\par}
+	\end{minipage}
+	
+	%-------------------- Header ----------------------
+	\begin{center}
+		性别: 男 $\cdot$\ 年龄: 29 \,$\cdot$\, 邮箱: \href{mailto:albertyang0607@gmail.com}{albertyang0607@gmail.com} \,$\cdot$\, 电话: \href{tel:+86-18795858970}{18795858970}\,$\cdot$\, Github: \href{https://github.com/CubeAlbert}{CubeAlbert}
+	\end{center}
+	
+	%%% Short paragraph
+	\sectitle{个人简介}
+	\begin{itemize}[itemsep=-5pt]
+		\item{7年以上金融科技系统开发经验的高级开发工程师，参与设计并交付高影响力交易系统。}
+		\item{过去两年兼任导师职责，培养初级工程师。}
+		\item{擅长端到端项目生命周期优化与技术方案创新，包括：集成测试框架设计与实施，高并发系统解决方案开发。}
+		\item {擅长将交易业务需求转化为可扩展技术架构，驱动团队达成目标。}
+	\end{itemize}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\sectitle{教育背景}
+	\text{南京大学} \hfill {2014年9月 -- 2018年6月} \\
+	\text{信息管理与信息系统 \space \textBF{学士学位}}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\sectitle{专业技能}
+	\textBF{编程语言:} \emph{Java, C\#, PowerShell, SQL}, C++, Bash, Groovy \\
+	\textBF{数据库:} \emph{Oracle, MongoDB, Sybase}, SQLServer\\
+	\textBF{框架:} Spring Boot, Spring Cloud, .Net Framework\\
+	\textBF{开发工具:} Git, SVN, IDEA, Visual Studio, Maven, Gradle, Jenkins, Docker, Copilot
+		
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\sectitle{工作经历}
+	%Change this to "Apps Dev Intmd Programmer Analyst" for HSBC, others can be "Senior Software Engineer"
+	\textBF{高级软件开发工程师} \hfill \emph{Market Data \& Post Trade}\\ 花旗金融信息服务（中国）有限公司  \hfill 2021年10月至今
+	\vspace{-0.2 cm}
+	\begin{enumerate}[itemsep=-5pt]
+		\item{直接负责核心模块功能编码，并通过严格代码审查确保交付质量，强制执行最佳实践标准。}
+		\item{通过强制同行评审机制推动代码质量提升，保障交付成果的健壮性。}
+		\item{搭建集成测试框架，实现微服务API端到端测试流程标准化，提升多项目间的效率与扩展性。}
+		\item{开发可扩展的DevOps自动化方案，减少人工操作并统一开发环境配置。}
+		\item{提供L3级生产系统支持，确保系统稳定性并及时处理关键问题。}
+	\end{enumerate}
+	\vspace{-0.2 cm}
+	%\begin{flushright}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	%\end{flushright}
+	\textBF{软件开发工程师}  \hfill \emph{Post Trade}\\ 花旗金融信息服务（中国）有限公司  \hfill 2020年2月 - 2021年9月
+	\vspace{-0.2 cm}
+	\begin{enumerate}[itemsep=-5pt]
+		\item{负责对账报告系统的核心模块维护工作。}
+		\item{协调第三方供应商实现OTC交易数据的跨系统自动化对齐。}
+		\item{提供基础L3级生产环境支持，保障系统稳定运行。}		
+	\end{enumerate}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	\textBF{软件开发} \hfill \emph{数字营销部}\\ 上海汉得信息技术股份有限公司  \hfill 2018年9月 - 2020年1月
+	\vspace{-0.2 cm}
+	\begin{enumerate}[itemsep=-5pt]
+		\item{参与系统日常维护及根据用户需求进行功能开发。}	
+		\item{在系统迁移期间设计实现自动化数据校验方案。}	
+	\end{enumerate}
+	
+	\pagebreak
+	%-------------------- SECTIONS ----------------------
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\sectitle{项目经验}
+	
+	\textBF{统一资产定价系统} \\ Java核心开发工程师 \hfill 2024年3月至今
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{项目概述:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {该系统专注于全球股票及其他上市资产的高频数据采集，实时计算投资组合估值（包括一篮子证券 Baskets、美国存托凭证 ADR 等）。通过网站查询接口，API 服务，数据订阅服务等渠道分发数据。当前性能可在15秒内完成单地区30万+资产的实时定价处理。未来目标实现5秒处理百万级资产的吞吐量，持续提升系统扩展性与性能。}
+		\end{itemize}
+		\item{\textbf{技术栈: }Spring Boot, MongoDB, ANTLR, Refinitiv EMA, Protobuf, Oracle, Groovy}
+		\item{\textbf{职责范围: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {与项目经理及业务分析师紧密协作，分析业务需求并转化为明确的技术方案，同时为初级工程师分配开发任务。}
+			\item{直接负责关键模块编码，并对初级工程师的解决方案及代码进行评审。}
+			\item{设计与实施持续集成/部署流水线，实现构建、测试及部署流程自动化。}
+			
+		\end{enumerate}
+		\item{\textbf{关键成果: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {通过引入"惰性求值算法"（Lazy Evaluation）重构篮子证券定价逻辑，成功消除定价误差并提升20\%计算效率。}
+			\item {重构数据流转架构，传输效率显著提升，处理耗时降低40\%。}
+			\item{设计并实施资产参考数据同步流程，数据准确率提升且系统停机时间减少。}
+			\item{以现代化\space CI/CD 自动化替代传统人工部署，系统可靠性与开发效率显著提高。}
+		\end{enumerate}
+	\end{itemize}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	
+	\textBF{.NET 自动化部署管道} \\ DevOps 工程师（技术负责人） \hfill 2023年10月 - 2024年2月
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{项目概述:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {该项目旨在为 .NET 应用程序构建 CI/CD 流水线，实现构建、测试、部署全流程自动化。通过 基础设施即代码（IaC）实践，与现有开发流程无缝集成，从而标准化并加速软件交付。}
+		\end{itemize}
+		\item{\textbf{技术栈: }PowerShell, Bitbucket, TeamCity, Udeploy, AutoSys}
+		\item{\textbf{职责范围: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {识别 .NET 开发、测试及部署流程中的痛点，分析现有瓶颈。}
+			\item {研究系统文档，深入理解现有工作流及部署规范。}
+			\item {编写自动化脚本，优化重复性任务，提升整体效率。}
+		\end{enumerate}
+		\item{\textbf{关键成果: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {开发了自动化脚本解决方案，将易出错的手动流程转变为可靠的工作流。}
+			\item {与团队协作诊断\space.NET 开发部署瓶颈，针对性优化了关键环节。}
+			\item {建立了 .NET\space CI/CD 最佳实践，以自动化框架替代人工操作，提升了开发部署效率。}
+		\end{enumerate}
+	\end{itemize}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+
+	\textBF{集成测试框架项目} \\ DevOps 工程师（核心开发成员） \hfill Mar 2023 - Feb 2024
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{项目概述:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {该集成测试框架旨在验证交易系统各组件间的交互协作，核心目标包括：确保系统功能变更时现有逻辑不受影响，杜绝引入意外缺陷; 作为 QA 转型计划的关键组成部分，通过自动化回归测试释放人力，使测试团队专注新功能验证; 全面提升系统可靠性与迭代效率。}
+		\end{itemize}
+		\item{\textbf{技术栈: }Java, Spring Boot, Spring Cloud, TestNG, Cucumber, Jacoco, OpenShift}
+		\item{\textbf{职责范围: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {架构设计: 设计测试项目基础结构，制定目录规范与配置模板; 建立可扩展性最佳实践，支撑长期迭代。}
+			\item {测试开发: 编写标准化测试用例，作为团队开发参考基准。}
+			\item {CI/CD 集成: 配置代码提交触发机制，实现测试全自动化执行。}
+			\item {环境赋能： 基于框架开发并部署 OpenShift 服务，提供独立测试环境。}
+		\end{enumerate}
+		\item{\textbf{关键成果: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {设计包含可复用公共库的模块化代码结构，提供标准示例项目。}
+			\item {开发基于该框架的微服务组件，支持手动触发测试，定时任务执行以及 OpenShift 平台一键部署。}
+		\end{enumerate}
+	\end{itemize}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	
+	\textBF{场外股权衍生品交易记录系统（全新构建项目）} \\ Java工程师（技术负责人）兼业务分析师 \hfill  2021年12月 - 2023年2月
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{项目概述:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {该服务负责处理累计期权\space(Accumulator) 场外衍生品交易，主要功能包括：接收外部平台的 XML 交易报文，转换为内部交易模型；执行交易生命周期验证，确保合规性；完成内部系统记录，并实时返回确认状态至发起方以实现跨系统自动化处理。}
+		\end{itemize}
+		\item{\textbf{技术栈: }Spring Boot, Spring Cloud, Solace, Protobuf, Jenkins, Docker, OpenShift}
+		\item{\textbf{职责范围: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {从零构建整套交易记录服务体系。}
+			\item {深入理解场外衍生品生命周期，完成50+外部字段与内部系统的精准映射。}
+			\item {设计高效项目结构，优化模块划分与配置管理。}
+			\item {开发数据提取逻辑，实现交易要素验证（如定价、交易对手检查）。}
+			\item {建立实时 API，连通内部交易平台与系统。}
+			\item {构建 CI/CD 流水线，标准化开发部署流程。}
+			\item {主导单元测试和 UAT 测试，覆盖业务需求。}
+			\item {定期向利益相关方同步项目进展与挑战。}
+		\end{enumerate}
+		\item{\textbf{关键成果: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item{从零完成该交易记录系统的技术实施。}
+			\item{精准定义 Accumulator 产品的50+字段转换规则。}
+			\item{在交易进入登记系统前自动核验关键要素。}
+			\item{通过 CI/CD 实现代码提交至 OpenShift 部署。}
+			\item{双周迭代汇报，及时解决了关键路径问题。}
+		\end{enumerate}
+	\end{itemize}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	
+	
+	\textBF{场外股权衍生品交易上传服务} \\ .Net 工程师（核心开发及维护负责人） \hfill  2020年6月 - 2024年2月
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{项目概述:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {该服务负责处理内部数据库与外部第三方交易平台间的场外衍生品交易上传，支持的金融产品包括：期权（Options），奇异期权（Exotic Options）以及股票互换（Equity Swaps）。}
+		\end{itemize}
+		\item{\textbf{技术栈: }C\#, TIBCO EMS, Sybase, C++, PowerShell}
+		\item{\textbf{职责范围: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {优化现有功能模块，提升系统性能以及开发新功能模块以满足业务新增需求。}
+			\item {在新版本发布或重大变更时执行人工测试验证。}
+			\item {维护多环境（开发/测试/生产）配置文件，确保配置准确生效。}
+		\end{enumerate}
+		\item{\textbf{关键成果: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item{开发新增模块，实现对一种新型期权的完整支持。}
+			\item{创建并维护涵盖系统架构、API接口、运维流程的详细技术文档，为原本零文档的服务构建了标准化文档体系。}
+		\end{enumerate}
+	\end{itemize}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	
+	\textBF{对账报告平台} \\ .NET工程师（系统维护） \hfill  2020年2月 - 2021年9月
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{项目概述:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {该平台通过整合多数据源接收交易数据流，执行自动化比对以识别差异，并提供门户供业务人员以查看核对异常及作出处理。}
+		\end{itemize}
+		\item{\textbf{技术栈: }C\#, PowerShell, Sybase, Java}
+		\item{\textbf{职责范围: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {深入理解场外衍生品（OTC）生命周期及数据流表征形式。}
+			\item {简化用户验收测试（UAT）流程，提升问题排查效率。}
+			\item {提供 L3 级生产环境技术支持。}
+		\end{enumerate}
+		\item{\textbf{关键成果: }}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item{重新设计了对账报告工具，引入并行处理机制，提升了报表生成效率。}
+		\end{itemize}
+	\end{itemize}
+	\vspace{-0.2 cm}
+	\hdashrule{\textwidth}{0.5pt}{2pt}
+	
+	\textBF{光明乳业经销商 CRM 系统} \\ Java开发工程师 \hfill  2018年6月 - 2019年12月
+	\vspace{-0.2 cm}
+	\begin{itemize}[itemsep=-5pt]
+		\item{\textbf{项目概述:}}
+		\vspace{-0.2 cm}
+		\begin{itemize}[itemsep=-5pt]
+			\item {该CRM系统为经销商管理提供全流程解决方案，核心功能模块包括：仓库管理，门店管理以及营销活动管理。}
+		\end{itemize}
+		\item{\textbf{技术栈: }eScript, Java, Oracle}
+		\item{\textbf{职责范围: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item {旧系统维护：执行日常监控、故障排查及定期更新。}
+			\item {新系统迁移：保障数据迁移完整性和相关测试。}
+			\item {跨开发团队需求对接与技术协调。}
+		\end{enumerate}
+		\item{\textbf{关键成果: }}
+		\vspace{-0.2 cm}
+		\begin{enumerate}[itemsep=-5pt]
+			\item{设计并实现与经销商管理系统对接的 API 接口。}
+			\item{基于 SQL + Shell 脚本实现旧系统海量数据自动抽取与加工。}
+		\end{enumerate}
+	\end{itemize}
+
+	
+	
+	\sectitle{其他信息}
+	\textBF{大语言模型经验} 
+	\begin{itemize} 
+		\item{本地部署 Stable Diffusion，用于AI图像生成。}
+		\item{本地部署 DeepSeek-R1 模型，用于AI对话。}
+		\item{调用 DeepSeek API 接入 DeepSeek-V3 大语言模型，实现智能对话功能。}
+	\end{itemize}
+		\textBF{证书} 
+	\begin{itemize}
+		\item{大学英语六级证书}
+		\item{项目管理专业人员认证（PMP）}
+	\end{itemize}
+
+\end{document}
